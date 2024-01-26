@@ -41,5 +41,5 @@ function sum(arrayInput) {
 
 
 //Calling the funcitons
-console.log(range(2, 10, 2));
-console.log(range(5, 2, -1));
+console.log(range(3, 15, 3));
+// console.log(range(5, 2, -1));
