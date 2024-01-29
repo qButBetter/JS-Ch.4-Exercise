@@ -1,33 +1,15 @@
 //Makes an array from start --> finish
 function range(startNum, endNum, stepInput = 1) {
-    let outputArray = new Array(Math.abs((startNum - endNum) / stepInput));
-    let numAdd = 0;
+    let outputArray = new Array(Math.abs((startNum - endNum) / stepInput - 1));
+    let numAdd = startNum;
 
     // Experimental conditional
-    if (stepInput > 0) {
-        numAdd = startNum;
-        for (i = 0; i < outputArray.length; i++) {
-            outputArray[i] = (numAdd);
-            numAdd += stepInput;
-        }
-    }
-    else if (stepInput < 0) {
-        numAdd = startNum;
-        for (i = 0; i < outputArray.length; i++) {
-            outputArray[i] = (numAdd);
-            numAdd += stepInput;
-        }
-    }
-
-    //Checks for undefined values in outputArray
     for (i = 0; i < outputArray.length; i++) {
-        if (isNaN(outputArray[i])) {
-            outputArray.splice(i, 1);
-        }
+        outputArray[i] = (numAdd);
+        numAdd += stepInput;
     }
 
-    // return(outputArray);
-    console.log(outputArray);
+    return (outputArray);
 }
 
 //Takes array, and adds the sum of all numbers inside.
@@ -39,10 +21,26 @@ function sum(arrayInput) {
         sum += inputArray[i];
     }
 
-    console.log(sum);
+    return (sum);
 }
 
+function reverseArray(arrayInput) {
+    let arrayOutput = new Array(arrayInput.length);
+    let tempVal = arrayInput[arrayInput.length - 1];
+
+    for (i = 0; i < arrayInput.length; i++) {
+        arrayOutput[i] = tempVal;
+        tempVal = arrayInput[arrayInput.length - (i + 2)];
+    }
+
+    return (arrayOutput);
+}
+
+function reverseArrayInPlace() {
+
+}
 
 //Calling the funcitons
-console.log(range(3, 15, 3));
-// console.log(range(5, 2, -1));
+console.log(sum(range(1, 10)));
+console.log(reverseArray(["A", "B", "C"]));
+// reverseArrayInPlace(arrayValue);
