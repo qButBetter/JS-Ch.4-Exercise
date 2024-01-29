@@ -36,11 +36,18 @@ function reverseArray(arrayInput) {
     return (arrayOutput);
 }
 
-function reverseArrayInPlace() {
+function reverseArrayInPlace(arrayInput) {
+    let tempVal = arrayInput[arrayInput.length - 1];
 
+    for (i = 0; i < arrayInput.length; i++) {
+        arrayInput[i] = tempVal;
+        tempVal = arrayInput[arrayInput.length - (i + 2)];
+    }
+
+    return (arrayInput);
 }
 
 //Calling the funcitons
 console.log(sum(range(1, 10)));
-console.log(reverseArray(["A", "B", "C"]));
-// reverseArrayInPlace(arrayValue);
+console.log(reverseArray(["A", "B", "C", "D", "E"]) + " Better One");
+console.log(reverseArrayInPlace(["A", "B", "C", "D", "E"]) + " Worse One");
