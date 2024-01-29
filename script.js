@@ -41,13 +41,61 @@ function reverseArrayInPlace(arrayInput) {
 
     for (i = 0; i < arrayInput.length; i++) {
         arrayInput[i] = tempVal;
+        console.log(tempVal);
         tempVal = arrayInput[arrayInput.length - (i + 2)];
     }
 
     return (arrayInput);
 }
 
+function arrayToList(arrayInput) {
+    // arrayInput[value]
+    let listOutput = {};
+
+for (i = arrayInput.length; i > 0; i--) {
+
+}
+
+
+}
+
+function listToArray(listInput) {
+    // listInput[value]
+    let arrayOutput = [];
+
+
+    for () {
+        
+    }
+
+}
+
+function deepEqual(input1, input2) {
+
+    if (input1 != null && input2 != null) {
+
+        if (input1 === input2) {
+            return (true);
+        }
+        else if (typeof (input1) == "object" && typeof (input2) == "object") {
+            return (true);
+        }
+        else {
+            return (false);
+        }
+
+    }
+
+}
+
 //Calling the funcitons
 console.log(sum(range(1, 10)));
 console.log(reverseArray(["A", "B", "C", "D", "E"]) + " Better One");
 console.log(reverseArrayInPlace(["A", "B", "C", "D", "E"]) + " Worse One");
+
+
+
+// let obj = {here: {is: "an"}, object: 2};
+// console.log(deepEqual(obj, obj));
+// console.log(deepEqual(obj, {here: 1, object: 2}));
+// console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
