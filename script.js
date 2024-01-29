@@ -1,24 +1,42 @@
 //Makes an array from start --> finish
 function range(startNum, endNum, stepInput = 1) {
     let outputArray = new Array(Math.abs(startNum - endNum));
+    let numAdd = 0;
 
-    // Positive stepInput
+    // // Positive stepInput
+    // if (stepInput > 0) {
+    //     for (i = 0; i <= outputArray.length; i += stepInput) {
+    //         outputArray[i] = (startNum + i);
+    //     }
+    // }
+    // // Negative stepInput
+    // else if (stepInput < 0) {
+    //     for (i = 0; i <= outputArray.length; i += stepInput) {
+    //         outputArray[i] = (endNum + i);
+    //     }
+    // }
+
+    // //Checks for undefined values in outputArray
+    // for (i = 0; i < outputArray.length; i++) {
+    //     if (isNaN(outputArray[i])) {
+    //         outputArray.splice(i, 1);
+    //     }
+    // }
+
+
+    // Experimental conditional
     if (stepInput > 0) {
-        for (i = 0; i <= outputArray.length; i += stepInput) {
-            outputArray[i] = (startNum + i);
+        numAdd = startNum;
+        for (i = 0; i < (outputArray.length / stepInput); i++) {
+            outputArray[i] = (numAdd);
+            numAdd += stepInput;
         }
     }
-    // Negative stepInput
     else if (stepInput < 0) {
-        for (i = 0; i <= outputArray.length; i += stepInput) {
-            outputArray[i] = (endNum + i);
-        }
-    }
-
-    //Checks for undefined values in outputArray
-    for (i = 0; i < outputArray.length; i++) {
-        if (isNaN(outputArray[i])) {
-            outputArray.splice(i, 1);
+        numAdd = startNum;
+        for (i = 0; i < Math.abs(outputArray.length / stepInput); i++) {
+            outputArray[i] = (numAdd);
+            numAdd += stepInput
         }
     }
 
