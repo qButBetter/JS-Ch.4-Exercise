@@ -50,6 +50,8 @@ function reverseArrayInPlace(arrayInput) {
 
 function arrayToList(arrayInput) {
     // arrayInput[value]
+
+    // Might have to define length of list
     let listOutput = {};
 
 for (i = arrayInput.length; i > 0; i--) {
@@ -61,27 +63,35 @@ for (i = arrayInput.length; i > 0; i--) {
 
 function listToArray(listInput) {
     // listInput[value]
+
+    // Might have to define length of the array
     let arrayOutput = [];
 
-
-    for () {
-        
+    let iterator = 0;
+    while (listInput[value] != null) {
+        arrayOutput[iterator] = listInput[value]
+        iterator++;
     }
 
+    return(arrayOutput);
 }
 
 function deepEqual(input1, input2) {
 
     if (input1 != null && input2 != null) {
 
-        if (input1 === input2) {
-            return (true);
-        }
-        else if (typeof (input1) == "object" && typeof (input2) == "object") {
-            return (true);
-        }
-        else {
-            return (false);
+        // if (input1 === input2) {
+        //     return (true);
+        // }
+        // else if (typeof (input1) == "object" && typeof (input2) == "object") {
+        //     return (true);
+        // }
+        // else {
+        //     return (false);
+        // }
+
+        if ((typeof(input1) === "object") && typeof(input2) === "object") {
+            // Something with Object.keys
         }
 
     }
